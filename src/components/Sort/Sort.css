@@ -1,0 +1,22 @@
+.sort__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.5);
+}
+.sort__title{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.sort__label--desc{
+    margin-bottom: 20px;
+    color: cadetblue;
+    display: block;
+}
+@media (max-width: 767px) {
+    .sort{
+        flex-basis: 90%;
+        margin: 10px auto 20px;
+    }
+}

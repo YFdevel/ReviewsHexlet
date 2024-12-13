@@ -1,0 +1,68 @@
+.filter{
+    width: 100%;
+    flex-basis: 25%;
+}
+.filter__wrapper,
+.filter__select {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.5);
+}
+
+.filter__wrapper{
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.filter__select {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.filter__title {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.filter__label--is-platform,
+.filter__label--is-rating {
+    margin-bottom: 20px;
+    color: cadetblue;
+    display: block;
+}
+
+.filter__input--number{
+    margin-left: 4px;
+}
+.filter__input--number:first-of-type{
+    margin-right: 4px;
+}
+.filter__submit{
+    position: absolute;
+    bottom:0;
+    max-height: 20px;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: 0;
+    background: #63647650;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .filter{
+        flex-basis: 90%;
+        margin: 10px auto 20px;
+    }
+    .filter__input--number:first-of-type{
+        margin-right: 0;
+    }
+}
+
