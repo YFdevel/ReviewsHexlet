@@ -13,7 +13,7 @@ const store = createStore(
     reducer,
     applyMiddleware(sagaMiddleware)
 );
-sagaMiddleware.run(helloSaga);
+sagaMiddleware.run(helloSaga); // redux-saga не реализована :(
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

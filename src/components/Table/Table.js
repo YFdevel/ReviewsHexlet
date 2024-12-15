@@ -51,11 +51,21 @@ const Table = () => {
             });
         }
     };
+    const resetPlatformFilter = () => {
+        dispatch({
+            type: "RESET_PLATFORM_FILTER"
+        });
+    };
+    const resetRatingFilter = () => {
+        dispatch({
+            type: "RESET_RATING_FILTER"
+        });
+    };
     return (
         <div className="table">
             <div className="table__settings">
                 <Sort sort={sort}/>
-                <Filter platforms={selectOptions.map((i)=>({id:i.id,platform:i.platform}))} filterByRange={filterByRange} filterByValue={filterByValue}/>
+                <Filter platforms={selectOptions.map((i)=>({id:i.id,platform:i.platform}))} filterByRange={filterByRange} filterByValue={filterByValue} resetPlatformFilter={resetPlatformFilter} resetRatingFilter={resetRatingFilter}/>
             </div>
             <h2 className="table__title">Таблица отзывов</h2>
             <ul className="table__list">

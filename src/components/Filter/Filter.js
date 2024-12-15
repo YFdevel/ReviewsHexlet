@@ -1,21 +1,24 @@
 import React, {useState} from "react";
 import "./Filter.css";
+import {useDispatch} from "react-redux";
 
-const Filter = ({platforms,filterByValue, filterByRange}) => {
+const Filter = ({platforms,filterByValue, filterByRange,resetPlatformFilter,resetRatingFilter}) => {
     const [isPlatform, setIsPlatform] = useState(false);
     const [isRating, setIsRating] = useState(false);
     const [min, setMin] = useState(1);
     const [max, setMax] = useState(5);
     const [isRatingDisable, setIsRatingDisable] = useState(false);
+
+
     return (
         <div className="table__filter filter">
             <h4 className="filter__title">Фильтр</h4>
             <label htmlFor="is-platform" className="filter_label filter__label--is-platform">
                 <span className="filter__tip">По платформе</span>
-                <input type="radio" id="is-platform" className="filter__input" name="filter" onChange={() => {
+                <input type="checkbox" id="is-platform" className="filter__input" name="platform" checked={isPlatform} onChange={() => {
                     setIsPlatform(prev => !prev);
                     if(isPlatform){
-                        setIsRating(false);
+                        resetPlatformFilter();
                     }
                 }}/>
             </label>
@@ -41,10 +44,10 @@ const Filter = ({platforms,filterByValue, filterByRange}) => {
             }
             <label htmlFor="is-rating" className="filter_label filter__label--is-platform">
                 <span className="filter__tip">По рейтингу</span>
-                <input type="radio" id="is-rating" className="filter__input"  name="filter" onChange={() => {
+                <input type="checkbox" id="is-rating" className="filter__input"  name="rating" checked={isRating} onChange={() => {
                     setIsRating(prev => !prev);
                     if(isRating){
-                        setIsPlatform(false);
+                        resetRatingFilter();
                     }
                 }}/>
             </label>

@@ -1,4 +1,12 @@
-import {GET_ALL_REVIEWS, SORT, SORT_DECREASE, FILTER_BY_VALUE, FILTER_BY_RANGE,RESET_RATING_FILTER} from "./actions";
+import {
+    GET_ALL_REVIEWS,
+    SORT,
+    SORT_DECREASE,
+    FILTER_BY_VALUE,
+    FILTER_BY_RANGE,
+    RESET_RATING_FILTER,
+    RESET_PLATFORM_FILTER
+} from "./actions";
 
 const initialState = {
     reviews: [
@@ -91,6 +99,9 @@ export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_ALL_REVIEWS: {
             return state;
+        }
+        case RESET_PLATFORM_FILTER: {
+            return initialState;
         }
         case SORT: {
             const sorted = sort();
